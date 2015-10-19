@@ -6,15 +6,16 @@ end
 
 def calculate(num1, num2, action)
   if is_num?(num1) && is_num?(num2)
-    if action == '+'
-      prompt(num1.to_i + num2.to_i)
-    elsif action == '-'
-      prompt(num1.to_i - num2.to_i)
-    elsif action == '*'
-      prompt(num1.to_i * num2.to_i)
-    elsif action == '/'
+    case action
+      when '+'
+        prompt(num1.to_i + num2.to_i)
+      when '-'
+        prompt(num1.to_i - num2.to_i)
+      when  '*'
+        prompt(num1.to_i * num2.to_i)
+      when '/'
       prompt(num1.to_f / num2.to_f)
-    else
+      else
       prompt("I do not understand the action you would like to perform.  Please try again.")
     end
   else
@@ -23,7 +24,7 @@ def calculate(num1, num2, action)
 end
 
 def is_num?(str)
-  /\A[-+]?\d+\z/ === str
+  /\d$/ === str
 end
 
 continue = 'y'
