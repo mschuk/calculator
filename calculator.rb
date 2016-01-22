@@ -1,7 +1,7 @@
 # create a calculator
 
 def prompt(msg)
-  puts "=> #{msg}"
+  Kernel.puts("=> #{msg}")
 end
 
 def calculate(num1, num2, action)
@@ -31,18 +31,18 @@ continue = 'y'
 
 until continue.downcase == 'n'
   prompt("Please enter a number")
-  num1 = gets.chomp
+  num1 = Kernel.gets().chomp.()
 
   prompt("Please enter another number")
-  num2 = gets.chomp
+  num2 = Kernel.gets().chomp()
 
   prompt("Please enter the action you would like to perform")
-  action = gets.chomp
+  action = Kernel.gets().chomp()
 
   calculate(num1, num2, action)
 
   prompt("Would you like to continue? y for yes, n to exit ")
-  continue = gets.chomp
+  continue = Kernel.gets().chomp()
 end
 
 
